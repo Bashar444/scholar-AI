@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: 0 0% 3.6%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 0 0% 45.1%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 142.1 70.6% 45.3%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 142.1 70.6% 45.3%;
+}
+
+.dark {
+  --background: 0 0% 3.6%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 98%;
+  --muted: 0 0% 45.1%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 142.1 70.6% 45.3%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 142.1 70.6% 45.3%;
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+/* Highlight colors for paper analysis */
+.highlight-importance {
+  @apply bg-importance/20 text-importance font-semibold;
+}
+
+.highlight-gap {
+  @apply bg-gap/20 text-gap font-semibold;
+}
+
+.highlight-objective {
+  @apply bg-objective/20 text-objective font-semibold;
+}
+
+.highlight-method {
+  @apply bg-method/20 text-method font-semibold;
+}
+
+.highlight-findings {
+  @apply bg-findings/20 text-findings font-semibold;
+}
+
+.highlight-implications {
+  @apply bg-implications/20 text-implications font-semibold;
+}
+
+/* Animations */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromBottom 0.3s ease-out;
+}
