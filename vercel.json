@@ -58,6 +58,7 @@
       "main": true
     }
   },
-  "deploymentTimestamp": "2025-11-02T00:00:00Z",
-  "status": "ready-for-production"
+  "deploymentTimestamp": "2025-11-02T12:30:00Z",
+  "status": "ready-for-production",
+  "deploymentTriggered": true
 }
