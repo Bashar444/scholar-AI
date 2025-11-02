@@ -1,0 +1,61 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/.next",
+  "framework": "nextjs",
+  "projectSettings": {
+    "nodeVersion": "18.x"
+  },
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@api_url",
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key"
+  },
+  "buildEnvironmentVariables": {
+    "NEXT_PUBLIC_API_URL": "https://your-backend-api.com",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://iumykjacuflyrbgyntku.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1bXlramFjdWZseXJiZ3ludGt1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIwODcxMTQsImV4cCI6MjA3NzY2MzExNH0.iCrOx47Q4r2BsSsexGlwrmoucyQ5uG5bamvQlIg3ZEk"
+  },
+  "productionBuildEnvironmentVariables": {
+    "NEXT_PUBLIC_API_URL": "https://your-backend-api.com",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://iumykjacuflyrbgyntku.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1bXlramFjdWZseXJiZ3ludGt1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIwODcxMTQsImV4cCI6MjA3NzY2MzExNH0.iCrOx47Q4r2BsSsexGlwrmoucyQ5uG5bamvQlIg3ZEk"
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://your-backend-api.com/api/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/docs",
+      "destination": "/api",
+      "permanent": false
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "regions": ["iad1"],
+  "functions": {
+    "frontend/pages/api/**": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
