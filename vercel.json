@@ -57,5 +57,7 @@
     "deploymentEnabled": {
       "main": true
     }
-  }
+  },
+  "deploymentTimestamp": "2025-11-02T00:00:00Z",
+  "status": "ready-for-production"
 }
