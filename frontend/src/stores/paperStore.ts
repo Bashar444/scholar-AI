@@ -9,13 +9,13 @@ interface PaperStore {
   removePaper: (paperId: string) => void
 }
 
-export const usePaperStore = create<PaperStore>((set) => ({
+export const usePaperStore = create<PaperStore>((set: any) => ({
   papers: [],
   currentPaper: null,
-  setCurrentPaper: (paper) => set({ currentPaper: paper }),
-  addPaper: (paper) => set((state) => ({ papers: [...state.papers, paper] })),
-  removePaper: (paperId) =>
-    set((state) => ({
-      papers: state.papers.filter((p) => p.id !== paperId),
+  setCurrentPaper: (paper: Paper | null) => set({ currentPaper: paper }),
+  addPaper: (paper: Paper) => set((state: PaperStore) => ({ papers: [...state.papers, paper] })),
+  removePaper: (paperId: string) =>
+    set((state: PaperStore) => ({
+      papers: state.papers.filter((p: Paper) => p.id !== paperId),
     })),
 }))
